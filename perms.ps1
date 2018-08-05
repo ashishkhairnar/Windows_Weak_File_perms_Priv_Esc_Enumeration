@@ -1,9 +1,8 @@
 Get-childitem C:\ -Include "*.exe" -Recurse -ErrorAction SilentlyContinue | #Modify the values like .exe, .dll etc.
-
 ForEach-Object {
 
  if (Test-Path -Path $_ -IsValid){
- try{
+  try{
       get-acl -Path $_.FullName |
 				
       select-object @{Name="Program"; Expression={$_.pschildname}},@{Name="Path";Expression={$_.pspath}},@{Name="Access";Expression={$_.accesstostring}}|			
@@ -11,8 +10,8 @@ ForEach-Object {
       Where-Object {$_.accesstostring -contains "*modify*" | ft}    
      }
 
- catch{}
- }
+  catch{}
+}
 }|Export-Csv -Path 'C:\Users\User1\Desktop\perms.csv' -NoTypeInformation
 
 $csv= Import-Csv 'C:\Users\User1\Desktop\perms.csv'
