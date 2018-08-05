@@ -16,6 +16,5 @@ ForEach-Object {
 
 $csv= Import-Csv 'C:\Users\User1\Desktop\perms.csv'
 $csv | foreach {
-
     if($_ -ilike "*Everyone Allow  FullControl*"){Write-Output $_}  #Modify for limited user like "Authenticated User  FullControl" etc. 
 } | Export-Csv -Path "C:\Users\User1\Desktop\perms.csv" -NoTypeInformation
