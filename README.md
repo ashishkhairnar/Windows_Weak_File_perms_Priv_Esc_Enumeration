@@ -5,4 +5,4 @@ Test and use accordingly. This script will enumerate the files/executables on th
 
 You may exploit that service/executable by restarting it and gain priv esc.
 
-#This can be use for attacking and defending (possibly way ahead of attacks ;))
+This can be use for attacking and defending (possibly way ahead of attacks ;))
